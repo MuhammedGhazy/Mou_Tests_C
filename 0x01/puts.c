@@ -7,5 +7,7 @@ int main (void)
 
 	_puts(str);
 
+	puts_half(str);
+
 	return (0);
 }

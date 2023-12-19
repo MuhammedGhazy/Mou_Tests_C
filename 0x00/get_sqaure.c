@@ -1,5 +1,5 @@
-#include <stdio.h>
 #include "main.h"
+#include <stddef.h>
 
 unsigned char Get_square (unsigned int *Ptr_Num1, unsigned int *Ptr_Num2, unsigned int *Ptr_Num3)
 {

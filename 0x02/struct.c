@@ -3,7 +3,7 @@
 #include "types.h"
 
 
-struct stduent_type {
+struct student_type {
 	unsigned short student_id;
 	char student_name [30];
 	float student_degree;
@@ -24,7 +24,7 @@ int main ()
 		char name [30];
 		float degree;
 	};
-	struct student_1 ahmed;
+	struct student_1 omar;
 
 	return (0);
 }
@@ -32,6 +32,6 @@ int main ()
 void func_1 (void)
 {
 	struct student_type mostafa;
-	/* Error this local structure type*/
+	/* Error this local structure type. */
 //	struct student_1 karem;
 }

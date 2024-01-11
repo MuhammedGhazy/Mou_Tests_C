@@ -27,6 +27,8 @@ int main()
 		print_student(ptr);
 		printf("===================\n");
 		print_student_data(Ahmed);
+		printf("===================\n");
+		print_student(&Ahmed);
 	}
 	else
 	{

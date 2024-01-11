@@ -70,8 +70,9 @@ int main()
 }*/
 
 
-/*this function is not recomnded because the copy data in the stacke and open more frames
+/*this functions is not recomnded because the copy data in the stacke and open more frames
  *  without refrance make error in the memory.
+ *  and the func gets not recomended.
 */
 void print_student_data (student_t student)
 {

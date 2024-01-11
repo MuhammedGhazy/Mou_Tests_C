@@ -11,11 +11,13 @@ typedef struct {
 
 student_t Ahmed = {"Ahmed Ibrahim", 22, 2.3};
 student_t *ptr = NULL;
-student_t ismaeil;
+student_t mostafa;
 
 void print_student (student_t *ptr_stu);
 void print_student_data (student_t student);
 void get_student_data(student_t *student_info);
+student_t get_student (void);
+
 
 int main()
 {
@@ -31,10 +33,12 @@ int main()
 	//	print_student_data(Ahmed);
 	//	printf("===================\n");
 	//	print_student(&Ahmed);
+	//	printf("====================\n");
+	//	get_student_data(&ismaeil);
 		printf("====================\n");
-		get_student_data(&ismaeil);
-		printf("====================\n");
-		print_student(&ismaeil);
+		mostafa = get_student();
+                printf("====================\n");
+		print_student_data(mostafa);
 
 	}
 	else
@@ -48,14 +52,14 @@ int main()
 	return(0);
 }
 
-void print_student (student_t *ptr_stu)
+/*void print_student (student_t *ptr_stu)
 {
 	printf("Student Name is   : %s \n", ptr_stu->student_name);
         printf("Student ID is     : %i \n", ptr_stu->student_id);
         printf("Student Degree is : %0.2f \n", ptr_stu->student_degree);
-}
+}*/
 
-void get_student_data(student_t *student_info)
+/*void get_student_data(student_t *student_info)
 {
 	printf("Please Enter Student Name : \n");
 	gets(&(student_info->student_name));
@@ -63,7 +67,7 @@ void get_student_data(student_t *student_info)
         scanf("%u", &(student_info->student_id));
         printf("Please Enter Student Degree: \n");
         scanf("%f", &(student_info->student_degree));
-}
+}*/
 
 
 /*this function is not recomnded because the copy data in the stacke and open more frames
@@ -74,5 +78,18 @@ void print_student_data (student_t student)
 	 printf("Student Name is   : %s \n", student.student_name);
          printf("Student ID is     : %i \n ", student.student_id);
          printf("Student Degree is : %0.2f \n", student.student_degree);
+}
+
+student_t get_student (void)
+{
+	student_t std_D;
+
+	 printf("Enter Student Name    :");
+	gets(std_D.student_name);
+         printf("Enter Student ID      :");
+	scanf("%u",&(std_D.student_id));
+         printf("Enter Student Degree  :");
+	scanf("%f",&(std_D.student_degree));
+	return (std_D);
 }
 

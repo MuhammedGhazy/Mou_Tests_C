@@ -26,19 +26,16 @@ void get_student_info (student_t students_f [], unsigned char arr_size)
 	for (counter = 0; counter < arr_size; counter++)
 	{
 		printf("Please Enter Student %i Name :", counter );
-		fgets(students_f[counter].student_name, sizeof(students_f[counter].student_name), stdin);
+        gets(students_f[counter].student_name);
 
-		 while ((c = getchar()) != '\n' && c != EOF);
 
 		printf("Please Enter Student %i Id :", counter );
 		scanf("%u", &(students_f[counter].student_id));
 
-		 while ((c = getchar()) != '\n' && c != EOF);
 
 		printf("Please Enter Student %i Degree :", counter);
                 scanf("%f", &(students_f[counter].student_degree));
-		 while ((c = getchar()) != '\n' && c != EOF);
 		fflush(stdin);
-		
+
 	}
 }

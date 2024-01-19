@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include "platform.h"
 #define File_Closed_Successfully 0
 #define Loop_size 3
 FILE *ptr = NULL;
@@ -9,6 +10,7 @@ typedef struct {
 	unsigned int student_id;
 	float student_degree;
 }student_t;
+uint8 student_data [100];
 
 int main()
 {
@@ -16,7 +18,7 @@ int main()
 	unsigned char counter = 0;
 	student_t student;
 
-	ptr = fopen("student.txt", "w");
+	ptr = fopen("students.txt", "w");
 	if(NULL != ptr)
 	{
 		printf("File Has Been Created.\n");
@@ -36,11 +38,13 @@ int main()
 				printf("Enter Student Degree\n");
 				scanf("%f", &student.student_degree);
 				getchar();
-				fprintf(ptr, "%i. Name : [%s] - Id Is [%u] - Degree Is [%f].\n", counter, student.student_name,											student.student_id, student.student_degree);
+				unsigned int erorr_status = fprintf(ptr, "%i. Name : [%s] - Id Is [%u] - Degree Is [%f].\n", counter, student.student_name,											student.student_id, student.student_degree); 
 					
-					
-				}
-		}
+					printf("Erorr _status = %i\n", erorr_status); 
+				} 
+
+			}
+		
 	
 					
 	else

@@ -24,22 +24,22 @@ int main()
 {
 	uint8 fclose_ret = 0;
 	unsigned int i = 0;
-	ptr = fopen("students.txt", "r");
+	ptr = fopen("college.txt", "r");
 	if (NULL != ptr)
 	{
 		printf("Okay, I Can Read The File\n");
-		for(i = 0; i < 3; i++)
-		{
-		fgets(read_student_data, sizeof(read_student_data),ptr);
-		
+	//	for(i = 0; i < 3; i++)
+	//	{
+	while(fgets(read_student_data, sizeof(read_student_data),ptr) != NULL)
+	{
 			
 	//		printf("Data is : %s\n", read_student_data);
 		//	printf("Data is : %c\n", read_student_data[36]);
 		//	printf("Data is : %c\n", read_student_data[37]);
 		//	printf("===============================\n");
 			fetch_student_data(&student, read_student_data);
-			print_studen_info(&student);
-		}
+//			print_studen_info(&student);
+	}
 
 
 	}
@@ -61,15 +61,15 @@ int main()
 void fetch_student_data (student_info *ptr_student, uint8 *student_data)
 {
 	uint8 student_id_str [3] = {0};
-	uint8 student_name_str [14] = {0};
+	uint8 student_name_str [17] = {0};
 	uint8 student_degree_str [4] = {0};
 
-	strncpy(student_id_str, student_data + 36, 2);
-//	printf("=> Id is %i\n", student_id_str);
+	strncpy(student_id_str, student_data + 40, 2);
+	printf("=> Id is %s\n", student_id_str);
 	strncpy(student_name_str, student_data + 11, 14);
-//	printf("=> Name is %s\n", student_name_str);
-	strncpy(student_degree_str, student_data + 53, 3);
-//	printf("=> Degree is %0.2f\n", student_degree_str);
+	printf("=> Name is %s\n", student_name_str);
+	strncpy(student_degree_str, student_data + 57, 3);
+	printf("=> Degree is %s\n", student_degree_str);
 
 	ptr_student->student_id = atoi (student_id_str);
 	ptr_student->student_degree = atof (student_degree_str);

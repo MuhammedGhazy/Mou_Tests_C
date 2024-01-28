@@ -18,7 +18,7 @@ int main()
 	unsigned char counter = 0;
 	student_t student;
 
-	ptr = fopen("students.txt", "w");
+	ptr = fopen("college.txt", "w");
 	if(NULL != ptr)
 	{
 		printf("File Has Been Created.\n");
@@ -38,7 +38,7 @@ int main()
 				printf("Enter Student Degree\n");
 				scanf("%f", &student.student_degree);
 				getchar();
-				unsigned int erorr_status = fprintf(ptr, "%i. Name : [%s] - Id Is [%u] - Degree Is [%f].\n", counter, student.student_name,											student.student_id, student.student_degree); 
+				unsigned int erorr_sts = fprintf(ptr, "%i. Name : [%s] - Id Is [%u] - Degree Is [%f].\n", counter, student.student_name,											student.student_id, student.student_degree); 
 					
 					printf("Erorr _status = %i\n", erorr_status); 
 				} 
